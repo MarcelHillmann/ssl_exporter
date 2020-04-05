@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b5c1c97-304a-428c-907c-594e0c96156b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1a2aCefmJALWXtKMVHTmkgoDWod" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\workspaces\pytCharme\ssl_exporter" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="ssl_exporter" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.server" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b5c1c97-304a-428c-907c-594e0c96156b" name="Default Changelist" comment="" />
+      <created>1585936015757</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585936015757</updated>
+      <workItem from="1585936016970" duration="18530000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2635" y="217" key="#xdebugger.evaluate" timestamp="1586023197507">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state x="2635" y="217" key="#xdebugger.evaluate/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1586023197507" />
+    <state width="725" height="466" key="DebuggerActiveHint" timestamp="1585941284878">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="725" height="466" key="DebuggerActiveHint/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585941284878" />
+    <state width="1877" height="348" key="GridCell.Tab.-1.bottom" timestamp="1585945734218">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.-1.bottom/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945734218" />
+    <state width="1877" height="348" key="GridCell.Tab.-1.center" timestamp="1585945734218">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.-1.center/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945734218" />
+    <state width="1877" height="348" key="GridCell.Tab.-1.left" timestamp="1585945734218">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.-1.left/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945734218" />
+    <state width="1877" height="348" key="GridCell.Tab.-1.right" timestamp="1585945734218">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.-1.right/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945734218" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586030865545">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1586030865545" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586030865545">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1586030865545" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586030865545">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1586030865545" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1586030865545">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1586030865545" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1585945728296">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945728296" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1585945728296">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945728296" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1585945728296">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945728296" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1585945728296">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1585945728296" />
+    <state x="2543" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1586029269173">
+      <screen x="1920" y="-6" width="1920" height="1040" />
+    </state>
+    <state x="2543" y="219" width="672" height="678" key="search.everywhere.popup/-9.-1086.1920.1040/1911.-1086.1920.1040/0.0.1920.1040/1920.-6.1920.1040@1920.-6.1920.1040" timestamp="1586029269173" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://C:/.python/python3.7.4/Lib/datetime.py</url>
+          <line>1901</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ssl_exporter$server.coverage" NAME="server Coverage Results" MODIFIED="1586029639666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
