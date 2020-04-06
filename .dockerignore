@@ -1,0 +1,7 @@
+.scannerwork/
+reports/
+.coverage
+nose.cfg
+scanner.cmd
+sonar-project.properties
+test_*.py
