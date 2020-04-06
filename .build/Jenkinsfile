@@ -1,5 +1,28 @@
-agent {
-  dockerfile {
-    dir './'
-    filename 'Dockerfile'
-  }
+pipeline {
+    agent { label 'docker' } // agent
+    options {
+        timestamp()
+    } // options
+    stages{
+        stage('test project') {
+            steps {
+                script {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
+                        sh 'env'
+                        sh '.build/scanner.sh'
+                    } // withSonarQubeEnv
+                } // script
+            } // steps
+        } // stage - test project
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                    waitForQualityGate abortPipeline: true
+                } // timeout
+            } // steps
+        } // stage
+    } // stages
+    post {
+        cleanWs deleteDirs: true, notFailBuild: true
+    } // post
+} // pipeline
