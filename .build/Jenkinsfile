@@ -7,6 +7,7 @@ pipeline {
         stage('test project') {
             steps {
                 script {
+                    withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}"])
                     withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
                         sh 'env'
                         sh '.build/scanner.sh'
