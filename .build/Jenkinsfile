@@ -23,6 +23,8 @@ pipeline {
         } // stage
     } // stages
     post {
-        cleanWs deleteDirs: true, notFailBuild: true
+        always {
+            cleanWs deleteDirs: true, notFailBuild: true
+        } // always
     } // post
 } // pipeline
