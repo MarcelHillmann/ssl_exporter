@@ -1,12 +1,16 @@
 from urllib.parse import urlparse
-from http.client import HTTPSConnection
+from http.client import HTTPSConnection, BadStatusLine
 from datetime import datetime
+from os import getenv
+import OpenSSL
+import ssl
 
 
 class Consumer:
     __url = None
     __version = ""
     __peer_cert = dict()
+    __proto_type = ""
 
     def __init__(self, target):
         self.__url = urlparse(url="https://" + target[0], allow_fragments=False)
@@ -20,19 +24,30 @@ class Consumer:
             sock = client.sock
             self.__peer_cert = sock.getpeercert()
             self.__version = client.sock.version()
+            try:
+                client.request("HEAD", "/")
+                client.getresponse()
+                self.__proto_type = "HTTPS"
+            except BaseException as e:
+                self.__proto_type = self.__proto(e, "TCP")
+                if isinstance(e, SystemExit):
+                    raise e
+                pass
             client.close()
             return True
         except BaseException as e:
             if isinstance(e, SystemExit):
                 raise e
-            else:
-                # print(e)
-                return False
+            print(e)
+            return False
             # try ... expect
         # def load
 
     def client_factory(self):
         return HTTPSConnection(self.__url.hostname, self.__url.port, timeout=10)
+
+    def __srvname_callback(self, sslobj, servername, sslctx):
+        return True
 
     def serial_number(self):
         if self.__not_in("subject"):
@@ -94,6 +109,20 @@ class Consumer:
 
         return str_to_float(self.__peer_cert["notAfter"])
         # not_after
+
+    def protocol(self):
+        return self.__proto_type
+
+    def __proto(self, e, default):
+        if isinstance(e, BadStatusLine):
+            bsl = str(e)
+            if "SMTP" in bsl:
+                return "SMTPS"
+            else:
+                print(bsl)
+                return default
+        else:
+            return default
     # class Consumer
 
 

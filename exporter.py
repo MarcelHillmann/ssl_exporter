@@ -23,8 +23,8 @@ ssl_tls_connect_success = "ssl_tls_connect_success %0.0f\n"
 missingTarget = "missing target\n\n".encode(ENC)
 contentType = "Content-Type"
 typePrometheus = "text/plain;version=0.0.4"
-NL = bytes("\n", ENC)
-
+NL = "\n".encode(ENC)
+none = "".encode(ENC)
 
 __author__ = "Marcel Hillmann"
 __version__ = "1.0"
@@ -68,6 +68,7 @@ class Exporter(BaseHTTPRequestHandler, ThreadingHTTPServer):
 
                     self.metric_write(h_ssl_tls_version_info, t_ssl_tls_version_info,
                                       ssl_tls_version_info % consumer.version())
+                    self.metric_write(none, none, ssl_tls_version_info % consumer.protocol())
                     self.metric_write(h_ssl_cert_not_after, t_ssl_cert_not_after,
                                       ssl_cert_not_after % (subject, san, sn, not_after))
                     self.metric_write(h_ssl_cert_not_before, t_ssl_cert_not_before,

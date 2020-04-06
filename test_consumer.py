@@ -14,9 +14,19 @@ class TestCaseConsumer(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        remove("./unittest.crt")
-        remove("./unittest.key")
+        pass
+        # remove("./unittest.crt")
+        # remove("./unittest.key")
         # tearDownClass
+
+    def test_Non_Https(self):
+        consumer = self.__consumer()
+        self.assertTrue(consumer.load())
+        self.assertEqual("TLSv1.3", consumer.version(), "version")
+        self.assertEqual("TCP", consumer.protocol(), "protocol")
+        self.assertEqual("localhost", consumer.subject(), "subject")
+        self.assertEqual("03:e8", consumer.serial_number(), "sn")
+        self.assertEqual("127.0.0.1", consumer.alternative_name(), "sAN")
 
     def test_SAN(self):
         ts = generator(cn="foo.bar.local")
@@ -24,6 +34,7 @@ class TestCaseConsumer(unittest.TestCase):
             consumer = self.__consumer()
             self.assertTrue(consumer.load())
             self.assertEqual("TLSv1.2", consumer.version(), "version")
+            self.assertEqual("HTTPS", consumer.protocol(), "protocol")
             self.assertEqual("foo.bar.local", consumer.subject(), "subject")
             self.assertEqual("03:e8", consumer.serial_number(), "sn")
             self.assertEqual("localhost,127.0.0.1", consumer.alternative_name(), "sAN")

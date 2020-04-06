@@ -1,0 +1,5 @@
+agent {
+  dockerfile {
+    dir './'
+    filename 'Dockerfile'
+  }
