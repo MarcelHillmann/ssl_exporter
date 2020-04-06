@@ -1,1 +1,7 @@
-.scannerwork
+__pycache__/
+.scannerwork/
+reports/
+.coverage
+coverage.json
+unittest.crt
+unittest.key
