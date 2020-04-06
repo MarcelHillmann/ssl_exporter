@@ -18,6 +18,20 @@ class TestCaseConsumer(unittest.TestCase):
         remove("./unittest.key")
         # tearDownClass
 
+    def test_SAN(self):
+        ts = generator(cn="foo.bar.local")
+        with server(ssl.PROTOCOL_TLSv1_2) as s:
+            consumer = self.__consumer()
+            self.assertTrue(consumer.load())
+            self.assertEqual("TLSv1.2", consumer.version(), "version")
+            self.assertEqual("foo.bar.local", consumer.subject(), "subject")
+            self.assertEqual("03:e8", consumer.serial_number(), "sn")
+            self.assertEqual("localhost,127.0.0.1", consumer.alternative_name(), "sAN")
+            self.assertEqual(ts["after"], consumer.not_after(), "after")
+            self.assertEqual(ts["before"], consumer.not_before(), "before")
+            # with server
+        # test_TLSv1_0
+
     def test_TLSv1_0(self):
         ts = generator(cn="foo.bar.local", san=False)
         with server(ssl.PROTOCOL_TLSv1) as s:
@@ -40,7 +54,7 @@ class TestCaseConsumer(unittest.TestCase):
             self.assertEqual("TLSv1.1", consumer.version(), "version")
             self.assertEqual("localhost", consumer.subject(), "subject")
             self.assertEqual("03:e8", consumer.serial_number(), "sn")
-            self.assertEqual("", consumer.alternative_name(), "sAN")
+            self.assertEqual("127.0.0.1", consumer.alternative_name(), "sAN")
             self.assertEqual(ts["after"], consumer.not_after(), "after")
             self.assertEqual(ts["before"], consumer.not_before(), "before")
             # with server
@@ -54,7 +68,7 @@ class TestCaseConsumer(unittest.TestCase):
             self.assertEqual("TLSv1.2", consumer.version(), "version")
             self.assertEqual("localhost", consumer.subject(), "subject")
             self.assertEqual("03:e8", consumer.serial_number(), "sn")
-            self.assertEqual("", consumer.alternative_name(), "sAN")
+            self.assertEqual("127.0.0.1", consumer.alternative_name(), "sAN")
             self.assertEqual(ts["after"], consumer.not_after(), "after")
             self.assertEqual(ts["before"], consumer.not_before(), "before")
             # with server

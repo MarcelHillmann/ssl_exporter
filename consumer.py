@@ -73,7 +73,7 @@ class Consumer:
         subject = self.subject()
         result = ""
         for k in self.__peer_cert["subjectAltName"]:
-            if isinstance(k, tuple) and k[0] in ("DNS", "IP") and k[1] != subject:
+            if isinstance(k, tuple) and k[0] in ("DNS", "IP Address") and k[1] != subject:
                 result += "," + k[1]
                 # isinstance and DNS and not subject
             # for k in sAN
