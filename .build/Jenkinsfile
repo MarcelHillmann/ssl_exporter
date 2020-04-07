@@ -31,7 +31,7 @@ pipeline {
     post {
         always {
             cleanWs(deleteDirs: true, notFailBuild: true)
-            sh 'rm -rf *'
+            sh 'find . -delete'
         } // always
     } // post
 } // pipeline
