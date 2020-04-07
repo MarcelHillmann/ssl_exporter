@@ -14,20 +14,9 @@ class TestCaseConsumer(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        pass
-        # remove("./unittest.crt")
-        # remove("./unittest.key")
+        remove("./unittest.crt")
+        remove("./unittest.key")
         # tearDownClass
-
-#    @unittest.skip("not fully implemented")
-#    def test_Non_Https(self):
-#        consumer = self.__consumer()
-#        self.assertTrue(consumer.load())
-#        self.assertEqual("TLSv1.3", consumer.version(), "version")
-#        self.assertEqual("TCP", consumer.protocol(), "protocol")
-#        self.assertEqual("localhost", consumer.subject(), "subject")
-#        self.assertEqual("03:e8", consumer.serial_number(), "sn")
-#        self.assertEqual("127.0.0.1", consumer.alternative_name(), "sAN")
 
     def test_SAN(self):
         ts = generator(cn="foo.bar.local")
@@ -43,36 +32,6 @@ class TestCaseConsumer(unittest.TestCase):
             self.assertEqual(ts["before"], consumer.not_before(), "before")
             # with server
         # test_TLSv1_0
-
-"""
-    def test_TLSv1_0(self):
-        ts = generator(cn="foo.bar.local", san=False)
-        with server(ssl.PROTOCOL_TLSv1) as s:
-            consumer = self.__consumer()
-            self.assertTrue(consumer.load())
-            self.assertEqual("TLSv1", consumer.version(), "version")
-            self.assertEqual("foo.bar.local", consumer.subject(), "subject")
-            self.assertEqual("03:e8", consumer.serial_number(), "sn")
-            self.assertEqual("", consumer.alternative_name(), "sAN")
-            self.assertEqual(ts["after"], consumer.not_after(), "after")
-            self.assertEqual(ts["before"], consumer.not_before(), "before")
-            # with server
-        # test_TLSv1_0
-
-    def test_TLSv1_1(self):
-        ts = generator()
-        with server(ssl.PROTOCOL_TLSv1_1) as s:
-            consumer = self.__consumer()
-            self.assertTrue(consumer.load())
-            self.assertEqual("TLSv1.1", consumer.version(), "version")
-            self.assertEqual("localhost", consumer.subject(), "subject")
-            self.assertEqual("03:e8", consumer.serial_number(), "sn")
-            self.assertEqual("127.0.0.1", consumer.alternative_name(), "sAN")
-            self.assertEqual(ts["after"], consumer.not_after(), "after")
-            self.assertEqual(ts["before"], consumer.not_before(), "before")
-            # with server
-        # test_TLSv1_1
-"""
 
     def test_TLSv1_2(self):
         ts = generator()
