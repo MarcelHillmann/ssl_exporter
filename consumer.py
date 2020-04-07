@@ -1,8 +1,5 @@
 from urllib.parse import urlparse
 from http.client import HTTPSConnection, BadStatusLine
-from datetime import datetime
-from os import getenv
-import OpenSSL
 import ssl
 
 
@@ -95,7 +92,7 @@ class Consumer:
         if self.__not_in("notBefore"):
             return -1
 
-        return str_to_float(self.__peer_cert['notBefore'])
+        return ssl.cert_time_to_seconds(self.__peer_cert['notBefore'])
 
     # not_before
 
@@ -103,7 +100,7 @@ class Consumer:
         if self.__not_in("notAfter"):
             return -1
 
-        return str_to_float(self.__peer_cert["notAfter"])
+        return ssl.cert_time_to_seconds(self.__peer_cert["notAfter"])
         # not_after
 
     def protocol(self):
@@ -120,8 +117,3 @@ class Consumer:
         else:
             return default
     # class Consumer
-
-
-def str_to_float(value) -> float:
-    return datetime.strptime(value, "%b %d %X %Y %Z").timestamp()
-    # str_to_float
