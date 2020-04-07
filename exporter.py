@@ -1,4 +1,4 @@
-from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+from http.server import BaseHTTPRequestHandler
 from http import HTTPStatus
 from urllib.parse import urlsplit, parse_qs
 from consumer import Consumer
@@ -31,7 +31,7 @@ __version__ = "1.0"
 __license__ = "GNU GPLv3"
 
 
-class Exporter(BaseHTTPRequestHandler, ThreadingHTTPServer):
+class Exporter(BaseHTTPRequestHandler):
 
     def __enter__(self):
         """to enable auto close """
@@ -130,6 +130,7 @@ class Exporter(BaseHTTPRequestHandler, ThreadingHTTPServer):
         # target_missing
     # class
 
+
 if __name__ == "__main__":
     handler = Exporter
     with TCPServer(("", 9000), handler) as httpd:
@@ -137,4 +138,4 @@ if __name__ == "__main__":
         httpd.serve_forever()
         # with TCPServer
     print("Server stopped.")
-    # __name__ == __main__
+# __name__ == __main__
