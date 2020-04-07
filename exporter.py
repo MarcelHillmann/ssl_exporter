@@ -78,7 +78,7 @@ class Exporter(BaseHTTPRequestHandler):
                                   ssl_tls_connect_success % success)
                 self.wfile.write(NL)
             # if target is None
-        elif self.path is "/":
+        elif self.path == "/":
             self.main_page()
         else:
             self.send_response(HTTPStatus.INTERNAL_SERVER_ERROR)
