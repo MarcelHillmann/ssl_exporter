@@ -1,0 +1,5 @@
+coverage
+pylint
+pyOpenSSL
+nose
+nose-cover3

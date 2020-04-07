@@ -27,6 +27,18 @@ pipeline {
                 } // timeout
             } // steps
         } // stage
+        stage('docker it') {
+            agent{ label 'docker' }
+            steps {
+                ansiColor('xterm') {
+                    script {
+                        docker.withRegistry('https://registry.mahillmann.de', 'nexus') {
+                            docker.build("scraper/ssl_exporter:${BRANCH_NAME}-build", ".").push("${BRANCH_NAME}")
+                        } // withRegistry
+                    } // script
+                } // ansiColor
+            } // steps
+        } // stage - docker it
     } // stages
 /*    post {
         always {

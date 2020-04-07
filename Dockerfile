@@ -1,8 +1,9 @@
 FROM python:3-alpine
-
+#
 WORKDIR /opt/app
-
+#
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
 COPY *.py ./
-CMD [ "python", "./your-daemon-or-script.py" ]
+RUN pip install --no-cache-dir -r requirements.txt
+#
+CMD [ "python3", "./exporter.py" ]
