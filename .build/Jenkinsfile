@@ -21,7 +21,11 @@ pipeline {
         stage("Quality Gate") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    waitForQualityGate abortPipeline: true
+                    retry(60) {
+                        withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
+                            waitForQualityGate abortPipeline: true
+                        } // withSonarQubeEnv
+                    } // retry
                 } // timeout
             } // steps
         } // stage
