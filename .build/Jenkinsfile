@@ -10,7 +10,7 @@ pipeline {
                 script {
                     withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}/bin"
                             ,"path+python=${tool(name: '3', type: 'jenkins.plugins.shiningpanda.tools.PythonInstallation')}"]) {
-                        withSonarQubeEnv {
+                        withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
                             sh 'ls -l'
                             sh 'bash -x .build/scanner.sh'
                         } // withSonarQubeEnv
@@ -20,10 +20,10 @@ pipeline {
         } // stage - test project
         stage("Quality Gate") {
             steps {
-                timeout(time: 1, unit: 'HOURS') {
-                    withSonarQubeEnv {
-                        waitForQualityGate(abortPipeline: true)
-                    } // script
+                timeout(10) {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
+                        waitForQualityGate abortPipeline: true
+                    } // withSonarQubeEnv
                 } // timeout
             } // steps
         } // stage
