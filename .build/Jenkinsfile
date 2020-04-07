@@ -22,7 +22,7 @@ pipeline {
         stage("Quality Gate") {
             steps {
                 timeout(10) {
-                    withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'SonarQube Scanner') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-secret') {
                         waitForQualityGate( abortPipeline: true )
                     } // withSonarQubeEnv
                 } // timeout

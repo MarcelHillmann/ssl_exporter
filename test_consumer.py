@@ -162,6 +162,10 @@ def server(ssl_version):
 
     class testHandler(SimpleHTTPRequestHandler):
 
+        def log_request(self, code='-', size='-'): pass
+
+        def log_error(self, format, *args): pass
+
         def do_GET(self):
             self.send_response(200)
             self.end_headers()

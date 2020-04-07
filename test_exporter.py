@@ -35,12 +35,13 @@ ASSERT_VALID_TARGET = "HTTP/1.0 200 OK\r\n" \
                       "# HELP ssl_tls_version_info The TLS version used\n" \
                       "# TYPE ssl_tls_version_info gauge\n" \
                       "ssl_tls_version_info{version=\"TLSv1.3\"} 1\n" \
+                      "ssl_tls_version_info{version=\"HTTPS\"} 1\n" \
                       "# HELP ssl_cert_not_after NotAfter expressed as a Unix Epoch Time\n" \
                       "# TYPE ssl_cert_not_after gauge\n" \
-                      "ssl_cert_not_after{cn=\"www.google.de\",dnsnames=\"\",sn=\"b1:d4:c6:7d:9c:c1:29:3c:08:00:00:00:00:32:0a:80\"} 1590479103\n" \
+                      "ssl_cert_not_after{cn=\"www.google.de\",dnsnames=\"\",sn=\"4f:a4:55:79:93:34:ed:15:08:00:00:00:00:32:0b:f5\"} 1590479943\n" \
                       "# HELP ssl_cert_not_before NotBefore expressed as a Unix Epoch Time\n" \
                       "# TYPE ssl_cert_not_before gauge\n" \
-                      "ssl_cert_not_before{cn=\"www.google.de\",dnsnames=\"\",sn=\"b1:d4:c6:7d:9c:c1:29:3c:08:00:00:00:00:32:0a:80\"} 1583225103\n" \
+                      "ssl_cert_not_before{cn=\"www.google.de\",dnsnames=\"\",sn=\"4f:a4:55:79:93:34:ed:15:08:00:00:00:00:32:0b:f5\"} 1583225943\n" \
                       "# HELP t_ssl_tls_connect_success connect successfully\n" \
                       "# TYPE t_ssl_tls_connect_success gauge\n" \
                       "ssl_tls_connect_success 1\n\n".encode(utf)
