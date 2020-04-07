@@ -21,8 +21,8 @@ pipeline {
         stage("Quality Gate") {
             steps {
                 timeout(time: 1, unit: 'HOURS') {
-                    script {
-                        waitForQualityGate abortPipeline: true
+                    withSonarQubeEnv {
+                        waitForQualityGate(abortPipeline: true)
                     } // script
                 } // timeout
             } // steps
@@ -30,7 +30,7 @@ pipeline {
     } // stages
     post {
         always {
-            cleanWs deleteDirs: true, notFailBuild: true
+            cleanWs(deleteDirs: true, notFailBuild: true)
         } // always
     } // post
 } // pipeline
