@@ -104,13 +104,13 @@ class TestCaseExporter(unittest.TestCase):
         self.assertEqual(ASSERT_MISSING_TARGET, r.result())
 
     def test_with_invalid_target(self):
-        """return sampels, if a invalid target is given"""
+        """return sampels, if a INValid target is given"""
         r = MockRequest("GET /metrics?target=foo-bar:443")
         MockServer(Exporter, r)
         self.assertEqual(ASSERT_INVALID_TARGET, r.result())
 
     def test_with_valid_target(self):
-        """return sampels, if a invalid target is given"""
+        """return sampels, if a VALID target is given"""
         r = MockRequest("GET /metrics?target=www.google.de:443")
         MockServer(Exporter, r)
         self.assertEqual(ASSERT_VALID_TARGET, r.result())
