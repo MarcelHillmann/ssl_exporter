@@ -1,4 +1,3 @@
-coverage
 pylint
 pyOpenSSL
 nose
