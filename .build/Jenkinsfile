@@ -1,10 +1,11 @@
 pipeline {
-    agent { label 'docker' } // agent
+    agent any
     options {
         timestamps()
     } // options
     stages{
         stage('test project') {
+            agent { label 'python' } // agent
             steps {
                 script {
                     withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}"
