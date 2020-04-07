@@ -32,7 +32,7 @@ pipeline {
             steps {
                 ansiColor('xterm') {
                     script {
-                        docker.withRegistry('https://registry.mahillmann.de', 'nexus') {
+                        docker.withRegistry('https://registry.mahillmann.de:5000', 'nexus') {
                             docker.build("scraper/ssl_exporter:${BRANCH_NAME}-build", ".").push("${BRANCH_NAME}")
                         } // withRegistry
                     } // script
