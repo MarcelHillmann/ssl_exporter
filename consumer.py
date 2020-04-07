@@ -32,22 +32,18 @@ class Consumer:
                 self.__proto_type = self.__proto(e, "TCP")
                 if isinstance(e, SystemExit):
                     raise e
-                pass
+                # except
             client.close()
             return True
         except BaseException as e:
             if isinstance(e, SystemExit):
                 raise e
-            print(e)
             return False
             # try ... expect
         # def load
 
     def client_factory(self):
         return HTTPSConnection(self.__url.hostname, self.__url.port, timeout=10)
-
-    def __srvname_callback(self, sslobj, servername, sslctx):
-        return True
 
     def serial_number(self):
         if self.__not_in("subject"):
