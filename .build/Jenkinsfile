@@ -16,13 +16,14 @@ pipeline {
                         } // withEnv
                     } // withSonarQubeEnv
                 } // script
+                junit( allowEmptyResults: true, testDataPublishers: [[$class: 'ClaimTestDataPublisher']], testResults: 'reports/junit.xml' )
             } // steps
         } // stage - test project
         stage("Quality Gate") {
             steps {
                 timeout(10) {
                     withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'SonarQube Scanner') {
-                        waitForQualityGate abortPipeline: true
+                        waitForQualityGate( abortPipeline: true )
                     } // withSonarQubeEnv
                 } // timeout
             } // steps
