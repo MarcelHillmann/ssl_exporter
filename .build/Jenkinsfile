@@ -16,14 +16,14 @@ pipeline {
                     } // withEnv
                 } // script
                 junit( allowEmptyResults: true, testResults: 'reports/junit.xml' )
-            } // steps
-        } // stage - test project
-        stage("Quality Gate") {
-            steps {
+
                 timeout(10) {
-                    withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'SonarQube Scanner') {
-                        waitForQualityGate( abortPipeline: true )
-                    } // withSonarQubeEnv
+                    script {
+                        def qg = waitForQualityGate false // Reuse taskId previously collected by withSonarQubeEnv
+                        if (qg.status != 'SUCCESS') {
+                            error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                        } // qg.status
+                    } // script
                 } // timeout
             } // steps
         } // stage
