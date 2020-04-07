@@ -8,13 +8,13 @@ pipeline {
             agent { label 'python' } // agent
             steps {
                 script {
-                    withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}/bin"
-                            ,"path+python=${tool(name: '3', type: 'jenkins.plugins.shiningpanda.tools.PythonInstallation')}"]) {
-                        withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
+                        withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}/bin"
+                                ,"path+python=${tool(name: '3', type: 'jenkins.plugins.shiningpanda.tools.PythonInstallation')}"]) {
                             sh 'ls -l'
                             sh 'bash -x .build/scanner.sh'
-                        } // withSonarQubeEnv
-                    } // withEnv
+                        } // withEnv
+                    } // withSonarQubeEnv
                 } // script
             } // steps
         } // stage - test project
