@@ -2,3 +2,4 @@
 pip3 install --user -r requirements.txt &&\
 nosetests -c .build/nose.cfg &&\
 sonar-scanner
+ls -AlhX
