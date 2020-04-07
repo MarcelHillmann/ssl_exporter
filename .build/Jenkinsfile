@@ -8,7 +8,7 @@ pipeline {
             agent { label 'python' } // agent
             steps {
                 script {
-                    withSonarQubeEnv(credentialsId: 'sonarqube') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-secret') {
                         withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}/bin"
                                 ,"path+python=${tool(name: '3', type: 'jenkins.plugins.shiningpanda.tools.PythonInstallation')}"]) {
                             sh 'ls -l'
@@ -21,7 +21,7 @@ pipeline {
         stage("Quality Gate") {
             steps {
                 timeout(10) {
-                    withSonarQubeEnv(credentialsId: 'sonarqube', installationName: 'SonarQube Scanner') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-secret', installationName: 'SonarQube Scanner') {
                         waitForQualityGate abortPipeline: true
                     } // withSonarQubeEnv
                 } // timeout

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b5c1c97-304a-428c-907c-594e0c96156b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.build/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/.build/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.build/scanner.sh" beforeDir="false" afterPath="$PROJECT_DIR$/.build/scanner.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +179,7 @@
       <updated>1585936015757</updated>
       <workItem from="1585936016970" duration="61602000" />
       <workItem from="1586185149504" duration="2174000" />
-      <workItem from="1586191284341" duration="13779000" />
+      <workItem from="1586191284341" duration="13871000" />
     </task>
     <task id="LOCAL-00001" summary="run jenkins run">
       <created>1586206533855</created>
