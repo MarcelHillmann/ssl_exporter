@@ -16,8 +16,7 @@ pipeline {
                         } // withSonarQubeEnv
                     } // withEnv
                 } // script
-                junit( allowEmptyResults: true
-                     , testDataPublishers: [[$class: 'ClaimTestDataPublisher']], testResults: 'reports/junit.xml' )
+                junit( allowEmptyResults: true, testResults: 'reports/junit.xml' )
             } // steps
         } // stage - test project
         stage("Quality Gate") {
