@@ -44,6 +44,7 @@ class TestCaseConsumer(unittest.TestCase):
             # with server
         # test_TLSv1_0
 
+"""
     def test_TLSv1_0(self):
         ts = generator(cn="foo.bar.local", san=False)
         with server(ssl.PROTOCOL_TLSv1) as s:
@@ -71,6 +72,7 @@ class TestCaseConsumer(unittest.TestCase):
             self.assertEqual(ts["before"], consumer.not_before(), "before")
             # with server
         # test_TLSv1_1
+"""
 
     def test_TLSv1_2(self):
         ts = generator()
