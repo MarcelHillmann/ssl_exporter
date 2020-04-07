@@ -129,8 +129,8 @@ def generator(cn: str = "localhost", san: bool = True, no_subject: bool = False)
             open("./unittest.key", "w") as k:
         c.write(crypto.dump_certificate(crypto.FILETYPE_PEM, cert).decode("utf-8"))
         k.write(crypto.dump_privatekey(crypto.FILETYPE_PEM, key).decode("utf-8"))
-    return {"before": ssl.cert_time_to_seconds(cert.get_notBefore().decode("utf-8")),
-            "after": ssl.cert_time_to_seconds(cert.get_notAfter().decode("utf-8"))}
+    return {"before": int(datetime.strptime("%Y%m%d%H%M%SZ", cert.get_notBefore().decode("utf-8")).timestamp()),
+            "after" : int(datetime.strptime("%Y%m%d%H%M%SZ", cert.get_notAfter().decode("utf-8")).timestamp())}
     # generator
 
 
