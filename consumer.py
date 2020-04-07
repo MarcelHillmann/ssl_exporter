@@ -17,6 +17,7 @@ class Consumer:
 
     def load(self) -> bool:
         try:
+            print("load")
             client = self.client_factory()
             client.connect()
             sock = client.sock
@@ -34,6 +35,7 @@ class Consumer:
             client.close()
             return True
         except BaseException as e:
+            print(e)
             if isinstance(e, SystemExit):
                 raise e
             return False
