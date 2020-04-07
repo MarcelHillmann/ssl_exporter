@@ -19,6 +19,7 @@ class TestCaseConsumer(unittest.TestCase):
         # remove("./unittest.key")
         # tearDownClass
 
+    @unittest.skip("not fully implemented")
     def test_Non_Https(self):
         consumer = self.__consumer()
         self.assertTrue(consumer.load())
