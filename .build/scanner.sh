@@ -5,4 +5,4 @@ mkdir reports
 pip3 install --user -r requirements.txt > /dev/null 2>&1
 nosetests -c .build/nose.cfg
 sonar-scanner
-ls -AlhX
+cat reports/junit.xml
