@@ -17,7 +17,6 @@ class Consumer:
 
     def load(self) -> bool:
         try:
-            print("load")
             client = self.client_factory()
             client.connect()
             sock = client.sock

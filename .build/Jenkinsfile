@@ -11,8 +11,7 @@ pipeline {
                     withEnv(["path+sonar=${tool(name: 'SonarQube Scanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation')}/bin"
                            , "path+python=${tool(name: '3.7', type: 'jenkins.plugins.shiningpanda.tools.PythonInstallation')}"]) {
                         withSonarQubeEnv(credentialsId: 'sonarqube-secret') {
-                            sh 'env'
-                            sh "bash -x .build/scanner.sh"
+                            sh "bash .build/scanner.sh"
                         } // withSonarQubeEnv
                     } // withEnv
                 } // script
@@ -29,10 +28,11 @@ pipeline {
             } // steps
         } // stage
     } // stages
-    post {
+/*    post {
         always {
             cleanWs(deleteDirs: true, notFailBuild: true)
             sh 'find . -delete'
         } // always
     } // post
+*/
 } // pipeline
