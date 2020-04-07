@@ -21,7 +21,7 @@ pipeline {
         stage("Quality Gate") {
             steps {
                 timeout(10) {
-                    withSonarQubeEnv(credentialsId: 'sonarqube-wtf') {
+                    withSonarQubeEnv(credentialsId: 'sonarqube-wtf', installationName: 'SonarQube Scanner') {
                         waitForQualityGate abortPipeline: true
                     } // withSonarQubeEnv
                 } // timeout
